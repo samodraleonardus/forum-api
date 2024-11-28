@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable comma-dangle */
 const ThreadsTableTestHelper = require("../../../../tests/ThreadsTableTestHelper");
 const UsersTableTestHelper = require("../../../../tests/UsersTableTestHelper");
@@ -83,7 +84,7 @@ describe("ThreadRepositoryPostgres", () => {
         owner: "user-123",
         title: "Existing Thread",
         body: "This is an existing thread.",
-        date: "2024-10-08T04:00:00.000Z",
+        date: new Date("2024-10-08T04:00:00.000Z").toISOString(),
       });
 
       const threadRepository = new ThreadRepositoryPostgres(pool, {});
@@ -95,7 +96,7 @@ describe("ThreadRepositoryPostgres", () => {
       expect(thread.username).toBe("John Doe");
       expect(thread.title).toBe("Existing Thread");
       expect(thread.body).toBe("This is an existing thread.");
-      expect(thread.date).toBe("2024-10-07T21:00:00.000Z");
+      expect(thread.date).toBe(new Date("2024-10-08T04:00:00.000Z").toISOString());
     });
   });
 });

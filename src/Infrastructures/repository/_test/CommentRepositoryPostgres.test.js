@@ -120,7 +120,7 @@ describe("CommentRepositoryPostgres", () => {
         threadId: "thread-123",
         owner: "user-123",
         content: "First comment",
-        date: '2024-11-08T10:00:00.000Z',
+        date: new Date('2024-11-08T10:00:00.000Z').toISOString(),
         is_deleted: false,
       });
       await CommentsTableTestHelper.inputComment({
@@ -128,7 +128,7 @@ describe("CommentRepositoryPostgres", () => {
         threadId: "thread-123",
         owner: "user-123",
         content: "Second comment",
-        date: '2024-11-08T11:00:00.000Z',
+        date: new Date('2024-11-08T11:00:00.000Z').toISOString(),
         is_deleted: false,
       });
 
@@ -142,14 +142,14 @@ describe("CommentRepositoryPostgres", () => {
         id: "comment-123",
         username: "John Doe",
         content: "First comment",
-        date: "2024-11-08T03:00:00.000Z",
+        date: "2024-11-08T10:00:00.000Z",
         is_deleted: false,
       });
       expect(comments[1]).toStrictEqual({
         id: "comment-124",
         username: "John Doe",
         content: "Second comment",
-        date: "2024-11-08T04:00:00.000Z",
+        date: "2024-11-08T11:00:00.000Z",
         is_deleted: false,
       });
     });

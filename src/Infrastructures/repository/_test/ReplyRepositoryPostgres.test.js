@@ -76,7 +76,7 @@ describe("ReplyRepositoryPostgres", () => {
         commentId: "comment-123",
         owner: "user-123",
         content: "First reply",
-        date: "2024-11-09T17:00:00.000Z",
+        date: new Date("2024-11-09T17:00:00.000Z").toISOString(),
         is_deleted: false,
       });
       await RepliesTableTestHelper.inputReply({
@@ -85,7 +85,7 @@ describe("ReplyRepositoryPostgres", () => {
         commentId: "comment-123",
         owner: "user-123",
         content: "Second reply",
-        date: "2024-11-10T17:00:00.000Z",
+        date: new Date("2024-11-10T17:00:00.000Z").toISOString(),
         is_deleted: false,
       });
 
@@ -108,7 +108,7 @@ describe("ReplyRepositoryPostgres", () => {
           comment_id: "comment-123",
           username: "John Doe",
           content: "First reply",
-          date: "2024-11-09T10:00:00.000Z",
+          date: "2024-11-09T17:00:00.000Z",
           is_deleted: false,
         },
         {
@@ -116,7 +116,7 @@ describe("ReplyRepositoryPostgres", () => {
           comment_id: "comment-123",
           content: "Second reply",
           username: "John Doe",
-          date: "2024-11-10T10:00:00.000Z",
+          date: "2024-11-10T17:00:00.000Z",
           is_deleted: false,
         },
       ]);
