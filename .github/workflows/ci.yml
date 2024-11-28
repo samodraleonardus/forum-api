@@ -17,7 +17,7 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: postgres
+          POSTGRES_USER: ${{ secrets.PG_USER }}
           POSTGRES_PASSWORD: ${{ secrets.PG_PASSWORD }}
           POSTGRES_DB: ${{ secrets.PG_DATABASE }}
         options: >-
